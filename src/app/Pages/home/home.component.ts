@@ -27,8 +27,10 @@ export class HomeComponent implements OnInit {
   }
   goToQuiz(i: any) {
     this.quizService.selectedCategory = this.quizService.quizData.filter(
-      (category: any) => {
-        return category.quizCategory == i;
+      (quizCategory: any) => {
+        if (quizCategory.quizCategory == i) {
+          return quizCategory.quizCategory;
+        }
       }
     );
 
