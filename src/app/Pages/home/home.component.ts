@@ -10,13 +10,29 @@ import { QuizService } from 'src/app/services/quiz.service';
 export class HomeComponent implements OnInit {
   constructor(private router: Router, public quizService: QuizService) {}
 
+  displayedCategories = [
+    {
+      quizCategory: 'Geography',
+      icon: '🌐',
+    },
+    {
+      quizCategory: 'History',
+      icon: '🏛️',
+    },
+  ];
+
   ngOnInit(): void {
-    console.log(this.quizService.quizData)
-    this.quizService.quizData.filter
+    console.log(this.quizService.quizData);
+    this.quizService.quizData.filter;
   }
   goToQuiz(i: any) {
-    this.quizService.selectedCategory = this.quizService.quizData[i];
-    console.log(this.quizService.selectedCategory);
+    this.quizService.selectedCategory = this.quizService.quizData.filter(
+      (category: any) => {
+        return category.quizCategory == i;
+      }
+    );
+
     this.router.navigate(['questions']);
+    console.log(this.quizService.selectedCategory);
   }
 }

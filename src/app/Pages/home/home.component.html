@@ -2,8 +2,8 @@
 <h3>todays quiz</h3>
 <div>
   <app-card
-    (click)="goToQuiz(i)"
-    *ngFor="let c of quizService.quizData, index as i"
+    (click)="goToQuiz(c.quizCategory)"
+    *ngFor="let c of displayedCategories; index as i"
     [text]="c.quizCategory"
     [img]="c.icon"
     [width]="'100%'"
