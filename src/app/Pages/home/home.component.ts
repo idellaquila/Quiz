@@ -10,7 +10,10 @@ import { QuizService } from 'src/app/services/quiz.service';
 export class HomeComponent implements OnInit {
   constructor(private router: Router, public quizService: QuizService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.quizService.quizData)
+    this.quizService.quizData.filter
+  }
   goToQuiz(i: any) {
     this.quizService.selectedCategory = this.quizService.quizData[i];
     console.log(this.quizService.selectedCategory);

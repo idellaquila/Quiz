@@ -1,4 +1,12 @@
 <div *ngFor="let q of quizService.selectedCategory">
-  <!-- <div *ngFor="let qu of q.quizQuestions">{{ qu }}</div> -->
-  {{q.quizCategory}}
+  <div class="questions-container">
+    <div *ngFor="let question of q.quizQuestions" class="question">
+      {{ question }}
+    </div>
+  </div>
+  <div *ngFor="let answer of q.answers" class="answers-container">
+    <div *ngFor="let singleAnswer of answer" class="answer">
+      {{ singleAnswer }}
+    </div>
+  </div>
 </div>
