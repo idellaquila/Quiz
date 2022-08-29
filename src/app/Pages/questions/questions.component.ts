@@ -11,11 +11,26 @@ export class QuestionsComponent implements OnInit {
   constructor(public quizService: QuizService, public router: Router) {}
 
   index: number = 0;
-  TextButton: string = 'Next';
+
+  selectedAnswer!: string;
+
+  changeButton: boolean = false;
+
   ngOnInit(): void {
     console.log(this.quizService.selectedCategory.answers);
   }
+
   nextQuestion() {
+    if (
+      this.selectedAnswer ==
+      this.quizService.selectedCategory[this.index].correctAnswer
+    ) {
+      console.log('ugualeeee');
+      this.quizService.points += 1;
+    } else {
+      console.log('NO');
+    }
+
     if (this.index < this.quizService.selectedCategory.length - 1) {
       this.index += 1;
       console.log('this.quizService.selectedCategory.length');
@@ -24,13 +39,36 @@ export class QuestionsComponent implements OnInit {
       console.log(this.index);
     }
     if (this.index == this.quizService.selectedCategory.length - 1) {
-      this.TextButton = 'Show Results';
+      this.changeButton = true;
       console.log('finito');
     }
-    if (this.index == this.quizService.selectedCategory.length) {
-      this.router.navigate(['show-results']);
-      console.log('vado verso la rotta!!');
+  }
+
+  goToResult() {
+    if (
+      this.selectedAnswer ==
+      this.quizService.selectedCategory[this.index].correctAnswer
+    ) {
+      console.log('ugualeeee');
+      this.quizService.points += 1;
+    } else {
+      console.log('NO');
     }
-    console.log(this.index);
+
+    this.router.navigate(['show-results']);
+  }
+
+  onSelectedAnswer(e: any, i: any) {
+    console.log(e.target.innerText);
+    this.selectedAnswer = e.target.innerText;
+    // if (
+    //   e.target.innerText === this.quizService.selectedCategory[i].correctAnswer
+    // ) {
+    //   console.log('ugualeeee');
+    //   this.quizService.points += 1;
+
+    // } else {
+    //   console.log('NO');
+    // }
   }
 }

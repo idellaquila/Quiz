@@ -17,11 +17,19 @@
 </div> -->
 
 <div>
-  <div>
-    <p>Domanda</p>
+    <div>Punti: {{quizService.points}}</div>
+  <div class="question">
     {{ quizService.selectedCategory[index].quizQuestion }}
-    <p>Risposte</p>
-    {{ quizService.selectedCategory[index].answers }}
   </div>
-  <button (click)="nextQuestion()">{{ TextButton }}</button>
+  <div class="answers-container">
+    <div
+      *ngFor="let a of quizService.selectedCategory[index].answers"
+      class="answer"
+      (click)="onSelectedAnswer($event, index)"
+    >
+      {{ a }}
+    </div>
+  </div>
+  <button *ngIf="!changeButton" (click)="nextQuestion()">Avanti</button>
+  <button *ngIf="changeButton" (click)="goToResult()">Vai al Risultato</button>
 </div>

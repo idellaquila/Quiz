@@ -12,11 +12,11 @@ export class HomeComponent implements OnInit {
 
   displayedCategories = [
     {
-      quizCategory: 'Geography',
+      quizCategory: 'Geografia',
       icon: '🌐',
     },
     {
-      quizCategory: 'History',
+      quizCategory: 'Storia',
       icon: '🏛️',
     },
   ];
