@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class QuizService {
   constructor() {}
+  selectedCategory: any;
   quizData: any = [
     {
       quizCategory: 'Geography',
@@ -31,6 +32,4 @@ export class QuizService {
       correctAnswer: 0,
     },
   ];
-
-  selectedCategory: any;
 }

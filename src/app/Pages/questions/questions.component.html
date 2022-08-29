@@ -1,4 +1,4 @@
-<div *ngFor="let q of quizService.selectedCategory">
+<!-- <div *ngFor="let q of quizService.selectedCategory">
   <div class="questions-container">
     <div *ngFor="let question of q.quizQuestions" class="question">
       {{ question }}
@@ -8,5 +8,24 @@
     <div *ngFor="let singleAnswer of answer" class="answer">
       {{ singleAnswer }}
     </div>
+  </div>
+</div> -->
+
+<!-- <div *ngFor="let q of quizService.selectedCategory">
+  {{ q.quizQuestion }}
+  {{ q.answers }}
+</div> -->
+<div *ngFor="let q of quizService.selectedCategory; let i = index">
+  <div>
+    <p>Domanda</p>
+    {{ quizService.selectedCategory[i].quizQuestion }}
+    <p>Risposte</p>
+    {{ quizService.selectedCategory[i].answers }}
+  </div>
+  <div>
+    <p>Domanda</p>
+    {{ quizService.selectedCategory[i].quizQuestion }}
+    <p>Risposte</p>
+    {{ quizService.selectedCategory[i].answers }}
   </div>
 </div>
