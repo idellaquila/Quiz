@@ -1,3 +1,13 @@
 <div>punteggio</div>
 <h3>todays quiz</h3>
-<app-card [text]="'ciao'"></app-card>
+<div>
+  <app-card
+    (click)="goToQuiz(i)"
+    *ngFor="let c of quizService.quizData, index as i"
+    [text]="c.quizCategory"
+    [img]="c.icon"
+    [width]="'100%'"
+    [height]="'150px'"
+    [background]="'cornflowerblue'"
+  ></app-card>
+</div>

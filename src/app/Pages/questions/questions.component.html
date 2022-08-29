@@ -1,1 +1,4 @@
-<p>questions works!</p>
+<div *ngFor="let q of quizService.selectedCategory">
+  <!-- <div *ngFor="let qu of q.quizQuestions">{{ qu }}</div> -->
+  {{q.quizCategory}}
+</div>

@@ -7,6 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input('text') text!: string;
+  @Input('width') width!: string;
+  @Input('height') height!: string;
+  @Input('img') img!: string;
+  @Input('background') background!: string;
+
 
   constructor() {}
 
