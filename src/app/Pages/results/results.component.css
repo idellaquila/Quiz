@@ -1,0 +1,16 @@
+.title {
+    padding: 5rem 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    background: rgb(58, 143, 255);
+    border: none;
+    padding: 1rem 0;
+    border-radius: 15px;
+    font-size: 18px;
+}

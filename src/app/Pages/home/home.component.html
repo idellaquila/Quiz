@@ -1,13 +1,74 @@
-<div>punteggio</div>
-<h3>todays quiz</h3>
-<div>
-  <app-card
-    (click)="goToQuiz(c.quizCategory)"
-    *ngFor="let c of displayedCategories; index as i"
-    [text]="c.quizCategory"
-    [img]="c.icon"
-    [width]="'100%'"
-    [height]="'150px'"
-    [background]="'cornflowerblue'"
-  ></app-card>
+<div class="container">
+  <div class="header">
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="30"
+        height="30"
+        viewBox="0 0 172 172"
+        style="fill: #000000"
+      >
+        <g
+          fill="none"
+          fill-rule="nonzero"
+          stroke="none"
+          stroke-width="none"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-miterlimit="10"
+          stroke-dasharray=""
+          stroke-dashoffset="0"
+          font-family="none"
+          font-weight="none"
+          font-size="none"
+          text-anchor="none"
+          style="mix-blend-mode: normal"
+        >
+          <path
+            d="M0,172v-172h172v172z"
+            fill="none"
+            stroke="none"
+            stroke-width="1"
+          ></path>
+          <g fill="white" stroke="none" stroke-width="1">
+            <path
+              d="M17.2,40.13333c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h137.6c2.06765,0.02924 3.99087,-1.05709 5.03322,-2.843c1.04236,-1.78592 1.04236,-3.99474 0,-5.78066c-1.04236,-1.78592 -2.96558,-2.87225 -5.03322,-2.843zM17.2,80.26667c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h137.6c2.06765,0.02924 3.99087,-1.05709 5.03322,-2.843c1.04236,-1.78592 1.04236,-3.99474 0,-5.78066c-1.04236,-1.78592 -2.96558,-2.87225 -5.03322,-2.843zM17.2,120.4c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h137.6c2.06765,0.02924 3.99087,-1.05709 5.03322,-2.843c1.04236,-1.78592 1.04236,-3.99474 0,-5.78066c-1.04236,-1.78592 -2.96558,-2.87225 -5.03322,-2.843z"
+            ></path>
+          </g>
+
+          <path
+            d="M62.805,113.06v-54.12h46.39v54.12z"
+            fill="#ff0000"
+            stroke="#50e3c2"
+            stroke-width="3"
+            opacity="0"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="points">{{ quizService.points }} Punti</div>
+  </div>
+
+  <h3>Today's Quiz</h3>
+
+  <div>
+    <app-card
+      (click)="goToQuiz(c.quizCategory)"
+      *ngFor="let c of displayedCategories; index as i"
+      [text]="c.quizCategory"
+      [img]="c.icon"
+      [width]="'100%'"
+      [height]="'100px'"
+      [background]="'cornflowerblue'"
+    ></app-card>
+  </div>
+</div>
+
+<div class="footer">
+  <div *ngFor="let i of footerLinks; index as j" class="links-container" (click)="onLinkClick($event)">
+    <i [class]="i.icon"></i>
+    <div>{{i.text}}</div>
+  </div>
 </div>

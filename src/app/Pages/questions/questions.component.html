@@ -1,35 +1,29 @@
-<!-- <div *ngFor="let q of quizService.selectedCategory">
-  <div class="questions-container">
-    <div *ngFor="let question of q.quizQuestions" class="question">
-      {{ question }}
+<div class="container">
+  <div class="steps-container">
+    <div
+      *ngFor="let n of quizService.selectedCategory; index as i"
+      class="step" [ngClass]="i === index ? 'selected' : ''"
+    >
+      {{ i + 1 }}
     </div>
   </div>
-  <div *ngFor="let answer of q.answers" class="answers-container">
-    <div *ngFor="let singleAnswer of answer" class="answer">
-      {{ singleAnswer }}
-    </div>
-  </div>
-</div> -->
-
-<!-- <div *ngFor="let q of quizService.selectedCategory">
-  {{ q.quizQuestion }}
-  {{ q.answers }}
-</div> -->
-
-<div>
-    <div>Punti: {{quizService.points}}</div>
   <div class="question">
     {{ quizService.selectedCategory[index].quizQuestion }}
   </div>
   <div class="answers-container">
     <div
-      *ngFor="let a of quizService.selectedCategory[index].answers"
+      *ngFor="let a of quizService.selectedCategory[index].answers; index as j"
+      
       class="answer"
-      (click)="onSelectedAnswer($event, index)"
+      (click)="onSelectedAnswer($event, j)"
     >
       {{ a }}
     </div>
   </div>
-  <button *ngIf="!changeButton" (click)="nextQuestion()">Avanti</button>
-  <button *ngIf="changeButton" (click)="goToResult()">Vai al Risultato</button>
+  <div class="button-container">
+    <button *ngIf="!changeButton" (click)="nextQuestion()" [disabled]="!selected">Avanti</button>
+    <button *ngIf="changeButton" (click)="goToResult()" [disabled]="!selected">
+      Vai al Risultato
+    </button>
+  </div>
 </div>

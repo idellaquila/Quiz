@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+h3 {
+  text-align: center;
+}
+
+.points {
+  background: rgb(255, 53, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 53, 233, 1) 0%,
+    rgba(84, 21, 120, 1) 100%
+  );
+  padding: 1rem 2rem;
+  border-radius: 45px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #080e6363;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+i {
+    opacity: 0.8;
+}

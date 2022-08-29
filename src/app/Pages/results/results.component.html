@@ -1,3 +1,9 @@
-<div>
-    Punteggio: {{quizService.points}}
+<div class="container">
+  <div *ngIf="quizService.points == 0" class="title">
+    <h1>Mi dispiace, hai totalizzato {{ quizService.points }} Punti... 😔</h1>
+  </div>
+  <div *ngIf="quizService.points > 0" class="title">
+    <h1>Congratulazioni! 🎉 Hai totalizzato {{ quizService.points }} Punti!</h1>
+  </div>
+  <button [routerLink]="'/home'">Gioca Ancora</button>
 </div>

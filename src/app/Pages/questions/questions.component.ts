@@ -16,11 +16,15 @@ export class QuestionsComponent implements OnInit {
 
   changeButton: boolean = false;
 
+  selected: boolean = false;
+
   ngOnInit(): void {
     console.log(this.quizService.selectedCategory.answers);
   }
 
   nextQuestion() {
+    this.selected = false;
+
     if (
       this.selectedAnswer ==
       this.quizService.selectedCategory[this.index].correctAnswer
@@ -51,6 +55,7 @@ export class QuestionsComponent implements OnInit {
     ) {
       console.log('ugualeeee');
       this.quizService.points += 1;
+      this.selected = false;
     } else {
       console.log('NO');
     }
@@ -58,17 +63,26 @@ export class QuestionsComponent implements OnInit {
     this.router.navigate(['show-results']);
   }
 
-  onSelectedAnswer(e: any, i: any) {
-    console.log(e.target.innerText);
-    this.selectedAnswer = e.target.innerText;
-    // if (
-    //   e.target.innerText === this.quizService.selectedCategory[i].correctAnswer
-    // ) {
-    //   console.log('ugualeeee');
-    //   this.quizService.points += 1;
+  onSelectedAnswer(e: any, j: any) {
+    e.target.parentNode.childNodes[j].classList.remove('selected');
+    e.target.classList.add('selected');
 
+    this.selected = true;
+
+    // if (e.target.classList.contains('selected')) {
+    //   console.log('true');
+    //   e.target.classList.remove('selected');
     // } else {
-    //   console.log('NO');
+    //   e.target.classList.add('selected');
     // }
+
+    console.log(j);
+    // console.log(
+    //   e.target.parentNode.childNodes.map((child: any) =>
+    //     child.classList.remove('selected')
+    //   )
+    // );
+
+    this.selectedAnswer = e.target.innerText;
   }
 }

@@ -21,6 +21,14 @@ export class HomeComponent implements OnInit {
     },
   ];
 
+  footerLinks = [
+    { link: '', icon: 'fa-solid fa-house', text: 'Home'},
+    { link: '', icon: 'fa-solid fa-table-cells-large'},
+    { link: '', icon: 'fa-solid fa-comment-dots'},
+    { link: '', icon: 'fa-solid fa-bell'},
+    { link: '', icon: 'fa-solid fa-user'},
+  ]
+
   ngOnInit(): void {
     console.log(this.quizService.quizData);
     this.quizService.quizData.filter;
@@ -36,5 +44,9 @@ export class HomeComponent implements OnInit {
 
     this.router.navigate(['questions']);
     console.log(this.quizService.selectedCategory);
+  }
+
+  onLinkClick(e: any) {
+    
   }
 }
