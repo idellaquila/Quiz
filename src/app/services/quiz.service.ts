@@ -25,7 +25,7 @@ export class QuizService {
     {
       quizCategory: 'Storia',
       quizQuestion: "In quale anno l'Italia è entrata nella NATO?",
-      answers: ['1492', '1949', '1485', '1980'],
+      answers: ['1859', '1949', '1485', '1980'],
       correctAnswer: '1949',
     },
     {
