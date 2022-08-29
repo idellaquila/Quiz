@@ -15,11 +15,13 @@
   {{ q.quizQuestion }}
   {{ q.answers }}
 </div> -->
-<div *ngFor="let q of quizService.selectedCategory; let i = index">
+
+<div>
   <div>
     <p>Domanda</p>
-    {{ quizService.selectedCategory[i].quizQuestion }}
+    {{ quizService.selectedCategory[index].quizQuestion }}
     <p>Risposte</p>
-    {{ quizService.selectedCategory[i].answers }}
+    {{ quizService.selectedCategory[index].answers }}
   </div>
+  <button (click)="nextQuestion()">{{ TextButton }}</button>
 </div>
