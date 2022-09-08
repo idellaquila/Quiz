@@ -11,14 +11,14 @@
     {{ quizService.selectedCategory[index].quizQuestion }}
   </div>
   <div class="answers-container">
-    <div
+    <button
       *ngFor="let a of quizService.selectedCategory[index].answers; index as j"
-      
+
       class="answer"
       (click)="onSelectedAnswer($event, j)"
     >
       {{ a }}
-    </div>
+    </button>
   </div>
   <div class="button-container">
     <button *ngIf="!changeButton" (click)="nextQuestion()" [disabled]="!selected">Avanti</button>

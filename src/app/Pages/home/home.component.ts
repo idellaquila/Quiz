@@ -30,8 +30,8 @@ export class HomeComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    console.log(this.quizService.quizData);
-    this.quizService.quizData.filter;
+
+  
   }
   goToQuiz(i: any) {
     this.quizService.selectedCategory = this.quizService.quizData.filter(
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
     );
 
     this.router.navigate(['questions']);
-    console.log(this.quizService.selectedCategory);
+
   }
 
   onLinkClick(e: any) {
